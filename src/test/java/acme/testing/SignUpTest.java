@@ -12,9 +12,43 @@
 
 package acme.testing;
 
-public class SignUpTest {
+import org.openqa.selenium.By;
+
+public class SignUpTest extends AcmeTest{
 
 	// This is a placeholder where you can introduce your own sign-up test
   	// Note that it depends on your project-specific test class.
+	
+	
+//	@Override
+//	@BeforeAll
+//	public void beforeAll() {
+//		super.beforeAll();
+//
+//		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
+//		super.setAutoPausing(true);
+//
+//		this.navigateHome();
+//		this.signIn("administrator", "administrator");
+//		super.clickOnMenu("Administrator", "Populate DB (initial)");
+//		this.signOut();
+//	}
+
+	public void signIn(final String username, final String password) {
+		super.navigateHome();
+		super.clickAndGo(By.linkText("Sign in"));
+		super.fillInputBoxIn("username", username);
+		super.fillInputBoxIn("password", password);
+		super.clickOnSubmitButton("Sign in");
+		super.checkSimplePath("/master/welcome");
+		super.checkLinkExists("Account");
+
+	}
+
+	protected void signOut() {
+		super.navigateHome();
+		super.clickOnMenu("Sign out", null);
+		super.checkSimplePath("/master/welcome");
+	}
 	
 }
