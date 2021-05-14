@@ -12,7 +12,6 @@
 
 package acme.testing;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.By;
 
 public class SignUpTest extends AcmeTest{
@@ -21,32 +20,35 @@ public class SignUpTest extends AcmeTest{
   	// Note that it depends on your project-specific test class.
 	
 	
-	@Override
-	@BeforeAll
-	public void beforeAll() {
-		super.beforeAll();
-
-		super.setBaseCamp("http", "localhost", "8080", "/Starter-Project", "/master/welcome", "?language=en&debug=true");
-		super.setAutoPausing(true);
-
-		this.navigateHome();
-		this.signIn("administrator", "administrator");
-		super.clickOnMenu("Administrator", "Populate DB (initial)");
-		this.signOut();
-	}
+//	@Override
+//	@BeforeAll
+//	public void beforeAll() {
+//		super.beforeAll();
+//
+//		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
+//		super.setAutoPausing(true);
+//
+//		this.navigateHome();
+//		this.signIn("administrator", "administrator");
+//		super.clickOnMenu("Administrator", "Populate DB (initial)");
+//		this.signOut();
+//	}
 
 	public void signIn(final String username, final String password) {
 		super.navigateHome();
 		super.clickAndGo(By.linkText("Sign in"));
-		super.fill(By.id("username"), username);
-		super.fill(By.id("password"), password);
-		super.clickAndGo(By.id("remember$proxy"));
-		//super.submit(By.className("btn-primary"));
+		super.fillInputBoxIn("username", username);
+		super.fillInputBoxIn("password", password);
+		super.clickOnSubmitButton("Sign in");
+		super.checkSimplePath("/master/welcome");
+		super.checkLinkExists("Account");
+
 	}
 
 	protected void signOut() {
 		super.navigateHome();
-		super.clickAndGo(By.linkText("Sign out"));
+		super.clickOnMenu("Sign out", null);
+		super.checkSimplePath("/master/welcome");
 	}
 	
 }
