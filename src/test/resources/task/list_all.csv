@@ -1,0 +1,7 @@
+recordIndex,end,link,start,text,title,visibility,work_load,manager_id
+0,2022-03-02 11:30:00,https://pablete.com,2022-02-26 11:30:00,Revisar las tareas de Pepe,Tarea1,1,2.5,
+1,2022-04-29 10:30:00,https://ferki.com,2022-04-26 10:30:00,Revisar los documentos,Tarea de Jose Manuel,1,1.5,
+2,2022-04-26 11:30:00,https://ferki.com,2022-04-26 10:30:00,Revisar los documentos,Tarea para el Viernes,1,1.8,
+3,2022-07-26 12:30:00,https://ferki.com,2022-07-26 10:30:00,Revisar los documentos,Tarea de Marta,1,2.2,
+4,2022-04-26 12:30:00,https://mercadona.com,2022-04-26 11:30:00,Comprar pan,Desayuno,1,0.2,
+5,2022-06-12 21:30:00,https://petclinic.com,2022-06-12 19:30:00,Sacar al perro,Tarea de Pedro,1,2.1,
