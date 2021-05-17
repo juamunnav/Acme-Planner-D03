@@ -31,12 +31,17 @@ public class AnonymousShoutListTest extends SignUpTest {
 		super.checkColumnHasValue(recordIndex, 1, author);
 		super.checkColumnHasValue(recordIndex, 2, text);
 
-		super.getListingRecord(recordIndex).get(0).getAttribute("author").equals(author);
-		super.getListingRecord(recordIndex).get(0).getAttribute("text").equals(text);
-		super.getListingRecord(recordIndex).get(0).getAttribute("moment").equals(moment);
-		super.getListingRecord(recordIndex).get(0).getAttribute("info").equals(info);
-
-
 	}
 
+//	@Override
+//	@AfterAll
+//	public void afterAll() {
+//		super.afterAll();
+//
+//		this.navigateHome();
+//		super.signIn("administrator", "administrator");
+//		super.clickOnMenu("Administrator", "Shut down");
+//
+//	}
+	
 }
