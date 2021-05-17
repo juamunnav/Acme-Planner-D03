@@ -44,5 +44,68 @@ public class AdministratorSpamUpdateTest extends SignUpTest {
 		super.checkErrorsExist("threshold");
 
 	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/spam/SpamBienAnyadirPalabraSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void positiveUpdateAddWord(final String words, final String threshold ) {
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Update spam words");
+		super.fillInputBoxIn("newword", words);
+		super.clickOnSubmitButton("Add word");
+
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/spam/SpamBienEliminarPalabraSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void positiveUpdateRemoveWord(final String words, final String threshold ) {
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Update spam words");
+		super.fillInputBoxIn("newword", words);
+		super.clickOnSubmitButton("Remove word");
+
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/spam/SpamMalEliminarPalabraSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void negativeUpdateRemoveWord(final String words, final String threshold ) {
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Update spam words");
+		super.fillInputBoxIn("newword", words);
+		super.clickOnSubmitButton("Remove word");
+		super.checkErrorsExist("newword");
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/spam/SpamMalEliminarPalabraSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void negativeUpdateRemoveWord2(final String words, final String threshold ) {
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Update spam words");
+		super.fillInputBoxIn("newword", "");
+		super.clickOnSubmitButton("Remove word");
+		super.checkErrorsExist("newword");
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/spam/SpamMalAnyadirPalabraSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void negativeUpdateAddWord(final String words, final String threshold ) {
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Update spam words");
+		super.fillInputBoxIn("newword", words);
+		super.clickOnSubmitButton("Add word");
+		super.checkErrorsExist("newword");
+	}
+	
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/spam/SpamMalAnyadirPalabraSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void negativeUpdateAddWord2(final String words, final String threshold ) {
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Update spam words");
+		super.fillInputBoxIn("newword", "");
+		super.clickOnSubmitButton("Add word");
+		super.checkErrorsExist("newword");
+	}
+
+
 
 }
