@@ -22,10 +22,22 @@ public class AnonymousShoutCreateSpamTest extends SignUpTest {
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/shout/ShoutNoSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void positiveCreateShout(final String author, final String text, final String info) {
+		super.clickOnMenu("Anonymous", "Create shout");
+		super.fillInputBoxIn("author", author);
+		super.fillInputBoxIn("text", text);
+		super.fillInputBoxIn("info", info);
+		super.clickOnSubmitButton("Create");
+		super.longSleep();
+
+	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/shout/ShoutSpamBien.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void positiveCreateSpamShout(final String author, final String text, final String info) {
+	@CsvFileSource(resources = "/shout/ShoutSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void negativeCreateSpamShout(final String author, final String text, final String info) {
 		super.clickOnMenu("Anonymous", "Create shout");
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
@@ -33,7 +45,7 @@ public class AnonymousShoutCreateSpamTest extends SignUpTest {
 		super.clickOnSubmitButton("Create");
 		super.longSleep();
 		super.checkErrorsExist();
-
+		
 	}
 
 }
