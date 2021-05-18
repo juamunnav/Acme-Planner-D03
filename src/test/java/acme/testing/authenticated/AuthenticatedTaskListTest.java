@@ -20,15 +20,19 @@ public class AuthenticatedTaskListTest extends SignUpTest {
 		this.navigateHome();
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
+		super.signIn("authenticated01", "authenticated01");
+
 		
-	
 	}
+	
 	@ParameterizedTest
-    @CsvFileSource(resources = "/task/list_all.csv", encoding = "utf-8", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/task/tasks1.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
     public void listAllVisibleandViewDetails(final int recordIndex, final String end, final String link, final String start, final String text, 
         final String title, final String visibility, final String workload, final String managerId) {
+		
 		super.signIn("authenticated01", "authenticated01");
+
 		super.clickOnMenu("Authenticated", "List tasks");
         
         super.checkColumnHasValue(recordIndex, 0, title);
@@ -37,16 +41,19 @@ public class AuthenticatedTaskListTest extends SignUpTest {
         super.checkColumnHasValue(recordIndex, 3, text);
         super.checkColumnHasValue(recordIndex, 4, link);
         super.checkColumnHasValue(recordIndex, 5, workload);
+
         
         super.clickOnListingRecord(recordIndex);
         
-        super.checkInputBoxHasValue("end", end);
-        super.checkInputBoxHasValue("link", link);
         super.checkInputBoxHasValue("start", start);
-        super.checkInputBoxHasValue("text", text);
+        super.checkInputBoxHasValue("end", end);
         super.checkInputBoxHasValue("title", title);
+        super.checkInputBoxHasValue("text", text);
+        super.checkInputBoxHasValue("link", link);
         super.checkInputBoxHasValue("visibility", visibility);
-        super.checkInputBoxHasValue("work_load", workload);
+        super.checkInputBoxHasValue("workload", workload);
+        
+        super.signOut();
 
 	}
 }
