@@ -18,7 +18,7 @@ public class ManagerTaskListTest extends SignUpTest {
 
 		this.navigateHome();
 		super.signIn("administrator", "administrator");
-//		super.clickOnMenu("Administrator", "Populate DB (samples)");
+		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 		
 	}
