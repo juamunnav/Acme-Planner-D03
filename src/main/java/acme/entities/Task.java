@@ -11,6 +11,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -50,6 +51,7 @@ public class Task extends DomainEntity {
 	protected Boolean			visibility;
 
 	@NotNull
+	@Positive
 	protected Double			workLoad;
 	
 	@ManyToOne(optional = true)

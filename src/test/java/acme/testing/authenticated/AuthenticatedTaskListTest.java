@@ -22,9 +22,14 @@ public class AuthenticatedTaskListTest extends SignUpTest {
 
 		
 	}
-	
+	/*
+	 * Tested Feature: Authenticated lists the public tasks that are finished (sorted by execution period or workload) 
+	 * and shows the details of the public tasks that are finished.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It shows the expected list of Tasks and show the details of each one.
+	 */
 	@ParameterizedTest
-    @CsvFileSource(resources = "/task/tasks1.csv", encoding = "utf-8", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/task/AuthTaskList.csv", encoding = "utf-8", numLinesToSkip = 1)
     public void listAllVisibleandViewDetails(final int recordIndex, final String end, final String link, final String start, final String text, 
         final String title, final String visibility, final String workload, final String managerId) {
 		

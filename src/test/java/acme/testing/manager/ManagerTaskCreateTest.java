@@ -22,9 +22,13 @@ public class ManagerTaskCreateTest extends SignUpTest {
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 	}
-
+	/*
+	 * Tested Feature: Manager creates a task as long as it is not considered spam.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It creates the expected task in Tasks.
+	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/task/TaskBien.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/task/ManagerTaskBien.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void positiveCrearTask(final String title, final String start, final String end, final String text, final String link, 
 		final String visibility, final String workLoad, final String manager) {
 		super.signIn("manager01", "manager01");
@@ -39,9 +43,13 @@ public class ManagerTaskCreateTest extends SignUpTest {
 		super.clickOnSubmitButton("Create");
 
 	}
-
+	/*
+	 * Tested Feature: Manager creates a task as long as it is not considered spam.
+	 * Violated constraints: Try to create a task with spam words and other errors.
+	 * Expected results: It shows the expected errors.
+	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/task/TaskMal.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/task/ManagerTaskMal.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void negativeCrearTask(final String title, final String start, final String end, final String text, final String link, 
 		final String visibility, final String workLoad, final String manager) {
 		super.signIn("manager01", "manager01");

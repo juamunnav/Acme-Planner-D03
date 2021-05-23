@@ -22,9 +22,13 @@ public class ManagerTaskUpdateTest extends SignUpTest {
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 	}
-
+	/*
+	 * Tested Feature: Manager update one of his tasks.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It updates the expected task.
+	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/task/TaskUpdateBien.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/task/ManagerTaskUpdateBien.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void positiveUpdateTask(final int recordIndex, final String title, final String start, final String end, final String text, final String link, 
 		final String visibility, final String workLoad, final String manager) {
 		super.signIn("manager01", "manager01");
@@ -42,9 +46,13 @@ public class ManagerTaskUpdateTest extends SignUpTest {
 		super.clickOnSubmitButton("Update");
 
 	}
-
+	/*
+	 * Tested Feature: Manager update one of his tasks.
+	 * Violated constraints: Try to update a task with differents errors and spam words.
+	 * Expected results: It shows the expected errors.
+	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/task/TaskUpdateMal.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/task/ManagerTaskUpdateMal.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void negativeUpdateTask(final int recordIndex,final String title, final String start, final String end, final String text, final String link, 
 		final String visibility, final String workLoad, final String manager) {
 		

@@ -22,14 +22,18 @@ public class AnonymousTaskListTest extends SignUpTest {
 		
 	
 	}
-	
+	/*
+	 * Tested Feature: Anonymous lists the public tasks that are non-finished (sorted by execution period or workload) 
+	 * and Show the details of any public tasks that are non-finished.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It shows the expected list of Tasks and show the details of each one.
+	 */
 	@ParameterizedTest
     @CsvFileSource(resources = "/task/AnonymousListTaskBien.csv", encoding = "utf-8", numLinesToSkip = 1)
     public void listAllVisibleandViewDetails(final int recordIndex, final String end, final String link, final String start, final String text, 
         final String title, final String visibility, final String workload, final String managerId) {
 
 		super.clickOnMenu("Anonymous", "List tasks");
-
     
         super.checkColumnHasValue(recordIndex, 0, title);
         super.checkColumnHasValue(recordIndex, 1, start);

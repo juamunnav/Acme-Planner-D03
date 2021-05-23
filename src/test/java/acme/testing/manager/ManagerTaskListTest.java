@@ -22,7 +22,11 @@ public class ManagerTaskListTest extends SignUpTest {
 
 		
 	}
-	
+	/*
+	 * Tested Feature: Manager lists his tasks and show their details.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It shows the expected list of Tasks and show the view with all their details.
+	 */
 	@ParameterizedTest
     @CsvFileSource(resources = "/task/ManagerListTask.csv", encoding = "utf-8", numLinesToSkip = 1)
     public void listAllVisibleandViewDetails(final int recordIndex, final String end, final String link, final String start, final String text, 
