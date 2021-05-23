@@ -13,7 +13,7 @@ import lombok.Setter;
 public class Word extends DomainEntity {
 
 	public Word(final String word) {
-		this.word = word;
+		this.palabra = word;
 	}
 
 	public Word() {
@@ -22,14 +22,14 @@ public class Word extends DomainEntity {
 
 	@Override
 	public String toString() {
-		return this.word;
+		return this.palabra;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((this.word == null) ? 0 : this.word.hashCode());
+		result = prime * result + ((this.palabra == null) ? 0 : this.palabra.hashCode());
 		return result;
 	}
 
@@ -42,10 +42,10 @@ public class Word extends DomainEntity {
 		if (this.getClass() != obj.getClass())
 			return false;
 		final Word other = (Word) obj;
-		if (this.word == null) {
-			if (other.word != null)
+		if (this.palabra == null) {
+			if (other.palabra != null)
 				return false;
-		} else if (!this.word.equals(other.word))
+		} else if (!this.palabra.equals(other.palabra))
 			return false;
 		return true;
 	}
@@ -53,6 +53,6 @@ public class Word extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	private String				word;
+	private String	palabra;
 
 }

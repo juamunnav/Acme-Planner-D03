@@ -1,3 +1,4 @@
+
 package acme.features.administrator.spam;
 
 import java.util.Collection;
@@ -43,15 +44,16 @@ public class AdministratorUpdateRemoveService implements AbstractUpdateService<A
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		String palabras = "";
+
 		final Collection<Word> words = entity.getWords();
+		final StringBuilder builder = new StringBuilder();
 
 		for (final Word word : words) {
-			palabras += word.getWord() + ", ";
+			builder.append(word.getPalabra());
+			builder.append(", ");
 		}
 
-		model.setAttribute("palabras", palabras);
+		model.setAttribute("palabras", builder.toString());
 		model.setAttribute("newword", "");
 		request.unbind(entity, model, "threshold");
 
@@ -78,8 +80,8 @@ public class AdministratorUpdateRemoveService implements AbstractUpdateService<A
 			errors.state(request, false, "newword", "administrator.word.error.empty");
 		} else {
 			for (final Word pal : palabras) {
-				if (pal.getWord().equals(palabra)) {
-					exists= true;
+				if (pal.getPalabra().equals(palabra)) {
+					exists = true;
 					break;
 				}
 			}
@@ -98,7 +100,7 @@ public class AdministratorUpdateRemoveService implements AbstractUpdateService<A
 
 		if (!newWord.equals("")) {
 			for (final Word pal : palabras) {
-				if (pal.getWord().equals(newWord)) {
+				if (pal.getPalabra().equals(newWord)) {
 					palabras.remove(pal);
 					break;
 				}

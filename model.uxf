@@ -428,7 +428,7 @@ Manager
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Word
 --
-+ word: String
++ palabra: String
 </panel_attributes>
     <additional_attributes/>
   </element>

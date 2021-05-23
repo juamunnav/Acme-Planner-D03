@@ -369,7 +369,7 @@ public abstract class AbstractTest {
 		assert element != null;
 
 		this.navigate(() -> {
-			this.clickAndGo(element);
+			this.clickAndGo(element); 
 		});
 		this.longSleep();
 	}

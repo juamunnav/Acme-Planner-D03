@@ -14,7 +14,7 @@ package acme.testing;
 
 import org.openqa.selenium.By;
 
-public class SignUpTest extends AcmeTest{
+public class SignUpTest extends AcmeTest{ 
 
 	// This is a placeholder where you can introduce your own sign-up test
   	// Note that it depends on your project-specific test class.
