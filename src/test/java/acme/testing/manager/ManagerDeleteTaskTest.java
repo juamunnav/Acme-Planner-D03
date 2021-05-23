@@ -20,7 +20,11 @@ public class ManagerDeleteTaskTest extends SignUpTest{
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 	}
-	
+	/*
+	 * Tested Feature: Manager deletes his tasks.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It deletes the expected Tasks.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/task/ManagerDeleteTaskBien.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void deleteTaskPositive(final int recordIndex) {
@@ -32,6 +36,5 @@ public class ManagerDeleteTaskTest extends SignUpTest{
 		super.signOut();
 		
 	}
-
-
+	
 }

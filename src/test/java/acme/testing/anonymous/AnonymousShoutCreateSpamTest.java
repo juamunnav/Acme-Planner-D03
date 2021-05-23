@@ -22,7 +22,11 @@ public class AnonymousShoutCreateSpamTest extends SignUpTest {
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 	}
-	
+	/*
+	 * Tested Feature: Anonymous writes a shout and publish it as long as it is not considered spam.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It creates the expected shout in Shouts.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/shout/ShoutNoSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void positiveCreateShout(final String author, final String text, final String info) {
@@ -34,7 +38,11 @@ public class AnonymousShoutCreateSpamTest extends SignUpTest {
 		super.longSleep();
 
 	}
-
+	/*
+	 * Tested Feature: Anonymous writes a shout and publish it as long as it is not considered spam.
+	 * Violated constraints: Try to create a shout with spam words on it.
+	 * Expected results: It shows the expected error in Shouts.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/shout/ShoutSpam.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void negativeCreateSpamShout(final String author, final String text, final String info) {

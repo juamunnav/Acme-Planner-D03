@@ -22,7 +22,11 @@ public class AnonymousShoutListTest extends SignUpTest {
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 
 	}
-
+	/*
+	 * Tested Feature: Anonymous lists the shouts that are not older than one month and sort them by moment.
+	 * Violated constraints: Not applicable.
+	 * Expected results: It shows the expected list of Shouts.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/shout/ShoutListBien.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void positiveListShouts(final int recordIndex, final String author, final String text, final String info, final String moment) {
@@ -32,16 +36,5 @@ public class AnonymousShoutListTest extends SignUpTest {
 		super.checkColumnHasValue(recordIndex, 2, text);
 
 	}
-
-//	@Override
-//	@AfterAll
-//	public void afterAll() {
-//		super.afterAll();
-//
-//		this.navigateHome();
-//		super.signIn("administrator", "administrator");
-//		super.clickOnMenu("Administrator", "Shut down");
-//
-//	}
 	
 }
