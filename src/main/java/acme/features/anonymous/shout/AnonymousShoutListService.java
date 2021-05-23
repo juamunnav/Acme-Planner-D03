@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,8 +46,8 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 	public Collection<Shout> findMany(final Request<Shout> request) {
 		assert request != null;
 		final Collection<Shout> result = this.repository.findMany(Date.valueOf(LocalDate.now().minusMonths(1)));
-		result.stream().sorted(Comparator.comparing(Shout::getMoment));
-		return result;
+		
+		return result.stream().sorted(Comparator.comparing(Shout::getMoment)).collect(Collectors.toList());
 	}
 	
 
