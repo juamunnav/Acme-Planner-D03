@@ -19,47 +19,47 @@
 		<property name="words">
 			<list>
 				<bean class="acme.entities.Word">
-					<property name="word" value="sex" />
+					<property name="palabra" value="sex" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="sexo" />
+					<property name="palabra" value="sexo" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="hard core" />
+					<property name="palabra" value="hard core" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="duro" />
+					<property name="palabra" value="duro" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="viagra" />
+					<property name="palabra" value="viagra" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="cialis" />
+					<property name="palabra" value="cialis" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="nigeria" />
+					<property name="palabra" value="nigeria" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="you've won" />
+					<property name="palabra" value="you've won" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="has ganado" />
+					<property name="palabra" value="has ganado" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="million dollar" />
+					<property name="palabra" value="million dollar" />
 				</bean>
 
 				<bean class="acme.entities.Word">
-					<property name="word" value="millón de dólares" />
+					<property name="palabra" value="millón de dólares" />
 				</bean>
 			</list>
 		</property>

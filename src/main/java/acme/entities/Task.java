@@ -64,10 +64,7 @@ public class Task extends DomainEntity {
 	@Transient
 	public Long getExecutionPeriod() {
 
-		final int milisecondsByHour = 3600000;
-		final long hours = (this.end.getTime() - this.start.getTime()) / milisecondsByHour;
-
-		return hours;
+		return (this.end.getTime() - this.start.getTime()) / 3600000;
 	}
 
 }

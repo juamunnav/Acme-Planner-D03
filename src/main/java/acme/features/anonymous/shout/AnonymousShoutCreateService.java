@@ -99,17 +99,17 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			final Integer tamA = entity.getAuthor().split(" ").length;
 
 			final String pal2 = entity.getText().trim();
-			final Integer tamT = entity.getText().split(" ").length;
+			final Integer tamT = entity.getText().split(" ").length; 
 
-			Integer acumA = 0;
-			Integer acumT = 0;
+			double acumA = 0.0;
+			double acumT = 0.0;
 
 			for (int i = 0; i < palabrasSpam.size(); i++) {
 
-				if (pal.contains(palabrasSpam.get(i).getWord())) {
+				if (pal.contains(palabrasSpam.get(i).getPalabra())) {
 					acumA++;
 				}
-				if (pal2.contains(palabrasSpam.get(i).getWord())) {
+				if (pal2.contains(palabrasSpam.get(i).getPalabra())) {
 					acumT++;
 				}
 
@@ -122,7 +122,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			final boolean isShoutSpamA = spamA > umbral;
 			final boolean isShoutSpamT = spamT > umbral;
 			errors.state(request, !isShoutSpamA, "author", "anonymous.shout.error.shout-spam");
-			errors.state(request, !isShoutSpamT, "text", "anonymous.shout.error.shout-spam");
+			errors.state(request, !isShoutSpamT, "text", "anonymous.shout.error.shout-spam"); 
 		}
 	}
 

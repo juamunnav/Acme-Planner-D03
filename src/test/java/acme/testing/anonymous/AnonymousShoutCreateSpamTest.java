@@ -18,9 +18,6 @@ public class AnonymousShoutCreateSpamTest extends SignUpTest {
 		//super.setAutoPausing(true);
 
 		this.navigateHome();
-		super.signIn("administrator", "administrator");
-		super.clickOnMenu("Administrator", "Populate DB (samples)");
-
 	}
 	/*
 	 * Tested Feature: Anonymous writes a shout and publish it as long as it is not considered spam.
@@ -53,7 +50,7 @@ public class AnonymousShoutCreateSpamTest extends SignUpTest {
 		super.clickOnSubmitButton("Create");
 		super.longSleep();
 		super.checkErrorsExist();
-		
+
 	}
 
 }
