@@ -117,6 +117,24 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			}
 		}
 
+		if (!errors.hasErrors("start")) {
+			final Date start = request.getModel().getDate("start");
+			final Date datenow = new Date(System.currentTimeMillis());
+
+			if (start.before(datenow)) {
+				errors.state(request, !start.before(datenow), "start", "manager.task.error.task-date-future"); 
+				}
+		}
+		
+		if (!errors.hasErrors("end")) {
+			final Date end = request.getModel().getDate("end");
+			final Date datenow = new Date(System.currentTimeMillis());
+
+			if (end.before(datenow)) {
+				errors.state(request, !end.before(datenow), "end", "manager.task.error.task-date-future");
+			}
+		}
+
 		final int textLength = request.getModel().getString("text").length();
 		errors.state(request, textLength > 0 && textLength <= 500, "text", "acme.validation.length", 0, 500);
 

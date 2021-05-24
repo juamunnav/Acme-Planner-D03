@@ -51,3 +51,4 @@ administrator.word.error.empty = The field must not be empty
 manager.task.error.task-date = Date can't be empty
 manager.task.error.task-dateAfter = End date must be after Start date
 manager.task.error.task-parse = You must enter a valid date
+manager.task.error.task-date-future = Date must be in future
