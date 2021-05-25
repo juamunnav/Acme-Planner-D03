@@ -15,7 +15,7 @@ We are going to produce this version of Starter Project following the requiremen
 This project implements the requirements for the levels C and B.
 
 GitHub's repository link -> https://github.com/juamunnav/Acme-Planner-D03
-GitHub's release link -> https://github.com/juamunnav/Acme-Planner-D03/releases/tag/v1.1
+GitHub's release link -> https://github.com/juamunnav/Acme-Planner-D03/releases/tag/v1.2
 			 	 
 CleverCloud:
 username:u9qprtqcrskwmgmw
