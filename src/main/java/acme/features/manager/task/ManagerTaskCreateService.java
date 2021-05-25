@@ -110,7 +110,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			final Date start = request.getModel().getDate("start");
 
 			if (end == null || start == null) {
-				errors.state(request, start != null, "start", "manager.task.error.task-date"); 
+				errors.state(request, start != null, "start", "manager.task.error.task-date");
 				errors.state(request, end != null, "end", "manager.task.error.task-date");
 			} else {
 				errors.state(request, end.after(start), "end", "manager.task.error.task-dateAfter");
@@ -122,10 +122,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			final Date datenow = new Date(System.currentTimeMillis());
 
 			if (start.before(datenow)) {
-				errors.state(request, !start.before(datenow), "start", "manager.task.error.task-date-future"); 
-				}
+				errors.state(request, !start.before(datenow), "start", "manager.task.error.task-date-future");
+			}
 		}
-		
+
 		if (!errors.hasErrors("end")) {
 			final Date end = request.getModel().getDate("end");
 			final Date datenow = new Date(System.currentTimeMillis());
@@ -154,7 +154,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 			for (int i = 0; i < palabrasSpam.size(); i++) {
 
-				if (pal.contains(palabrasSpam.get(i).getPalabra())) { 
+				if (pal.contains(palabrasSpam.get(i).getPalabra())) {
 					acumA++;
 				}
 				if (pal2.contains(palabrasSpam.get(i).getPalabra())) {
@@ -195,7 +195,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	}
 
 	public Double toHours(final Integer minutes) {
-		return (double) minutes / 60 + (double) (minutes % 60) / 100; 
+		return minutes / 60 + (double) (minutes % 60) / 100;
 	}
 
 }
