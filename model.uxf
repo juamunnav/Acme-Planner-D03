@@ -265,7 +265,7 @@ bg=yellow</panel_attributes>
     <coordinates>
       <x>476</x>
       <y>322</y>
-      <w>238</w>
+      <w>245</w>
       <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -323,13 +323,14 @@ Spam
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
 --
-+ start: Date{NotNull, Temporal(TIMESTAMP), future}
-+ end: Date{NotNull, Temporal(TIMESTAMP), future}
++ start: Date{NotNull, Temporal(TIMESTAMP)}
++ end: Date{NotNull, Temporal(TIMESTAMP)}
 + title: String {NotBlank, lenght(max = 80)}
 + text: String (NotBlank, lenght(max = 500))
 + link: String {URL}
 + visibility: Boolean {NotNull}
-+ workload: Double</panel_attributes>
++ workload: Double
++ / executionPeriod: Long</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -419,15 +420,15 @@ Manager
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1085</x>
+      <x>1078</x>
       <y>329</y>
-      <w>203</w>
+      <w>189</w>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Word
 --
-+ word: String
++ palabra: String
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -436,13 +437,13 @@ Word
     <coordinates>
       <x>966</x>
       <y>357</y>
-      <w>133</w>
+      <w>126</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=    n
 m2= 1
     has &gt;</panel_attributes>
-    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>

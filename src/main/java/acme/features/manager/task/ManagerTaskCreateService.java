@@ -110,10 +110,28 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			final Date start = request.getModel().getDate("start");
 
 			if (end == null || start == null) {
-				errors.state(request, !(start == null), "start", "manager.task.error.task-date");
-				errors.state(request, !(end == null), "end", "manager.task.error.task-date");
+				errors.state(request, start != null, "start", "manager.task.error.task-date");
+				errors.state(request, end != null, "end", "manager.task.error.task-date");
 			} else {
 				errors.state(request, end.after(start), "end", "manager.task.error.task-dateAfter");
+			}
+		}
+
+		if (!errors.hasErrors("start")) {
+			final Date start = request.getModel().getDate("start");
+			final Date datenow = new Date(System.currentTimeMillis());
+
+			if (start.before(datenow)) {
+				errors.state(request, !start.before(datenow), "start", "manager.task.error.task-date-future");
+			}
+		}
+
+		if (!errors.hasErrors("end")) {
+			final Date end = request.getModel().getDate("end");
+			final Date datenow = new Date(System.currentTimeMillis());
+
+			if (end.before(datenow)) {
+				errors.state(request, !end.before(datenow), "end", "manager.task.error.task-date-future");
 			}
 		}
 
@@ -131,15 +149,15 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			final String pal2 = entity.getText().trim();
 			final Integer tamT = entity.getText().split(" ").length;
 
-			Integer acumA = 0;
-			Integer acumT = 0;
+			double acumA = 0.0;
+			double acumT = 0.0;
 
 			for (int i = 0; i < palabrasSpam.size(); i++) {
 
-				if (pal.contains(palabrasSpam.get(i).getWord())) {
+				if (pal.contains(palabrasSpam.get(i).getPalabra())) {
 					acumA++;
 				}
-				if (pal2.contains(palabrasSpam.get(i).getWord())) {
+				if (pal2.contains(palabrasSpam.get(i).getPalabra())) {
 					acumT++;
 				}
 

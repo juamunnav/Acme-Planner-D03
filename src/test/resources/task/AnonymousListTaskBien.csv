@@ -1,0 +1,9 @@
+recordIndex,end,link,start,text,title,visibility,work_load,manager_id
+0,2022/04/26 14:30,https://mercadona.com,2022/04/26 13:30,Comprar pan,Desayuno,1,0.20,
+1,2022/04/29 12:30,https://ferki.com,2022/04/26 12:30,Revisar los documentos,Tarea de Jose Manuel,1,1.50,
+2,2022/04/26 13:30,https://ferki.com,2022/04/26 12:30,Revisar los documentos,Tarea para el Viernes,1,1.80,
+3,2022/06/12 23:30,https://petclinic.com,2022/06/12 21:30,Sacar al perro,Tarea de Pedro,1,2.10,
+4,2022/07/26 14:30,https://ferki.com,2022/07/26 12:30,Revisar los documentos,Tarea de Marta,1,2.20,
+5,2022/06/12 22:00,https://petclinic.com,2022/06/12 20:30,Sacar al perro,Tarea de Pablo,1,2.40,
+6,2022/03/02 12:30,https://pablete.com,2022/02/26 12:30,Revisar las tareas de Pepe,Tarea de Juan José,1,2.50,
+7,2022/06/05 18:20,https://compramostucoche.es,2022/06/05 16:45,Limpiar el coche,Tarea de Juan,1,3.50,

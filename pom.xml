@@ -19,10 +19,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<name>Acme Planner</name>
-	<description>This is the Acme Planner for #D02.</description>
+	<description>This is the Acme Planner for #D03.</description>
 
 	<artifactId>Acme-Planner</artifactId>
-	<version>21.2</version>
+	<version>21.4</version>
 	<packaging>war</packaging>
 
 	<parent>

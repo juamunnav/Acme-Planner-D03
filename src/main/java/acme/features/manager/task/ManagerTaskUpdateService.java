@@ -83,8 +83,8 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			final Date start = request.getModel().getDate("start");
 
 			if (end == null || start == null) {
-				errors.state(request, !(start == null), "start", "manager.task.error.task-date");
-				errors.state(request, !(end == null), "end", "manager.task.error.task-date");
+				errors.state(request, start != null, "start", "manager.task.error.task-date");
+				errors.state(request, end != null, "end", "manager.task.error.task-date");
 			} else {
 				errors.state(request, end.after(start), "end", "manager.task.error.task-dateAfter");
 			}
@@ -106,15 +106,15 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			final String pal2 = entity.getText().trim();
 			final Integer tamT = entity.getText().split(" ").length;
 
-			Integer acumA = 0;
-			Integer acumT = 0;
+			double acumA = 0;
+			double acumT = 0;
 
 			for (int i = 0; i < palabrasSpam.size(); i++) {
 
-				if (pal.contains(palabrasSpam.get(i).getWord())) {
+				if (pal.contains(palabrasSpam.get(i).getPalabra())) {
 					acumA++;
 				}
-				if (pal2.contains(palabrasSpam.get(i).getWord())) {
+				if (pal2.contains(palabrasSpam.get(i).getPalabra())) {
 					acumT++;
 				}
 
