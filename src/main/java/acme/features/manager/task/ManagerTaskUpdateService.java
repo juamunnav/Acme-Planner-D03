@@ -90,11 +90,29 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			}
 		}
 		
-		final int textLength = request.getModel().getString("text").length();
-		errors.state(request, textLength > 0 && textLength <= 100, "text", "acme.validation.length", 1, 100);
+		if (!errors.hasErrors("start")) {
+			final Date start = request.getModel().getDate("start");
+			final Date datenow = new Date(System.currentTimeMillis());
 
-		final int authorLength = request.getModel().getString("title").length();
-		errors.state(request, authorLength >= 5 && authorLength <= 25, "title", "acme.validation.length", 5, 25);
+			if (start.before(datenow)) {
+				errors.state(request, !start.before(datenow), "start", "manager.task.error.task-date-future");
+			}
+		}
+
+		if (!errors.hasErrors("end")) {
+			final Date end = request.getModel().getDate("end");
+			final Date datenow = new Date(System.currentTimeMillis());
+
+			if (end.before(datenow)) {
+				errors.state(request, !end.before(datenow), "end", "manager.task.error.task-date-future");
+			}
+		}
+		
+//		final int textLength = request.getModel().getString("text").length();
+//		errors.state(request, textLength > 0 && textLength <= 500, "text", "acme.validation.length", 1, 500);
+//
+//		final int authorLength = request.getModel().getString("title").length();
+//		errors.state(request, authorLength > 0 && authorLength <= 80, "title", "acme.validation.length", 1, 80);
 
 		if (!errors.hasErrors("text") && !errors.hasErrors("title")) {
 
