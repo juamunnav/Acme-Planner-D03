@@ -8,16 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the Acme Planner project. This project is for deliverable #D02. 
+This is the Acme Planner project. This project is for deliverable #D03. 
 
 We are going to produce this version of Starter Project following the requirements given by.
 
 This project implements the requirements for the levels C and B.
 
-GitHub's repository link -> https://github.com/manbuegom/Acme-Planner-D02
-GitHub's release link -> https://github.com/manbuegom/Acme-Planner-D02/releases/tag/v1.0
-			 
-
+GitHub's repository link -> https://github.com/juamunnav/Acme-Planner-D03
+GitHub's release link -> https://github.com/juamunnav/Acme-Planner-D03/releases/tag/v1.1
+			 	 
 CleverCloud:
 username:u9qprtqcrskwmgmw
 password:HI8g1ttKZwPwonPTXhyI
