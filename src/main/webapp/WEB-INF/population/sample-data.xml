@@ -289,6 +289,7 @@
 			<list>
 				<ref bean="manager01" />
 				<ref bean="managerAuthenticated01" />
+				<ref bean="managerAnonymous01" />
 			</list>
 		</property>
 	</bean>
@@ -297,6 +298,11 @@
 		<property name="userAccount" ref="managerUserAccount01" />
 		<property name="company" value="managerComp" />
 		<property name="sector" value="managerSector" />
+	</bean>
+
+	<bean name="managerAnonymous01"
+		class="acme.framework.entities.Anonymous">
+		<property name="userAccount" ref="managerUserAccount01" />
 	</bean>
 
 	<bean name="managerAuthenticated01"
@@ -320,6 +326,7 @@
 			<list>
 				<ref bean="manager02" />
 				<ref bean="managerAuthenticated02" />
+				<ref bean="managerAnonymous02" />
 			</list>
 		</property>
 	</bean>
@@ -328,6 +335,11 @@
 		<property name="userAccount" ref="managerUserAccount02" />
 		<property name="company" value="managerComp2" />
 		<property name="sector" value="managerSector2" />
+	</bean>
+
+	<bean name="managerAnonymous02"
+		class="acme.framework.entities.Anonymous">
+		<property name="userAccount" ref="managerUserAccount02" />
 	</bean>
 
 	<bean name="managerAuthenticated02"
@@ -358,7 +370,7 @@
 		class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="authenticatedUserAccount01" />
 	</bean>
-	
+
 	<bean id="task14" class="acme.entities.Task">
 		<property name="start" value="2022/04/26 12:30" />
 		<property name="end" value="2022/04/26 14:30" />
