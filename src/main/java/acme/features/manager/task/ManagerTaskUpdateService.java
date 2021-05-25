@@ -152,7 +152,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	}
 
 	public Double toHours(final Integer minutes) {
-		return (double) minutes / 60 + (double) (minutes % 60) / 100;
+		return minutes / 60 + (double) (minutes % 60) / 100;
 	}
 
 }
